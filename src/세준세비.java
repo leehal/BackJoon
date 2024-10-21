@@ -1,16 +1,16 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class 세준세비 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        try {
             String t = bf.readLine();
+        List<String > list  = new ArrayList<>();
             for (int i = 0; i < Integer.parseInt(t); i++) {
-                if (!bf.readLine().isEmpty()){
-                    continue;
-                }
+                if (bf.readLine().isEmpty()){}
                 String[] nm = bf.readLine().split(" ");
                 int s = 0;
                 int b = 0;
@@ -30,14 +30,14 @@ public class 세준세비 {
                 }
 
                 if (b > s) {
-                    System.out.println("B");
+                    list.add("B");
                 } else {
-                    System.out.println("S");
+                    list.add("S");
                 }
-//                System.out.println();
             }
-        }catch (NumberFormatException e){
 
+        for (String s : list) {
+            System.out.println(s);
         }
     }
 }
